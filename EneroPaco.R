@@ -1,10 +1,10 @@
 
 
-shaderas <- terra::rast("/vsicurl/https://zenodo.org/record/7213637/files/m1_h12_ground.tif")
-shade.route <- calc_shaded_route("Calle Castilla, Sevilla", "San Jacinto, Sevilla", shaderas)
+eneroras <- terra::rast("/vsicurl/https://zenodo.org/record/7213637/files/m1_h12_ground.tif")
+enero.route <- calc_shaded_route("Calle Castilla, Sevilla", "San Jacinto, Sevilla", eneroras)
 
 library(leaflet)
-leaflet(sf::st_as_sf(shade.route)) |>
+leaflet(sf::st_as_sf(enero.route)) |>
   leaflet::addWMSTiles(baseUrl = "https://www.ign.es/wms-inspire/ign-base",
   layers = "IGNBaseTodo-nofondo") |>
   leaflet::addTiles(urlTemplate =
